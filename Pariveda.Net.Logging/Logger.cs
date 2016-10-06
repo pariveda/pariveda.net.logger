@@ -6,29 +6,24 @@ namespace Pariveda.Net.Logging
     {
         private static readonly NLog.Logger logger = LogManager.GetCurrentClassLogger();
 
-        public static void Error()
+        public static void Error(string message)
         {
-            logger.Error("Error");
+            logger.Error(message);
         }
 
-        public static void Warning()
+        public static void Warning(string message)
         {
-            logger.Warn("Warning");
+            logger.Warn(message);
         }
 
-        public static void Info()
+        public static void Info(string message)
         {
-            logger.Info("Info");
+            logger.Info(message);
         }
 
-        public static void Debug()
+        public static void Debug(string message)
         {
-            logger.Debug("Debug");
-        }
-
-        private static string FormatMessage(string message)
-        {
-            return message;
+            logger.Debug(message);
         }
     }
 }
