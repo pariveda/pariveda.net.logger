@@ -6,9 +6,17 @@ namespace Pariveda.Net.Logging
     {
         private static readonly NLog.Logger logger = LogManager.GetCurrentClassLogger();
 
+        private const string defaultError = "An error occured. Please try again later.";
+
         public static void Error(string message)
         {
+            message = string.IsNullOrEmpty(message) ? defaultError : message;
             logger.Error(message);
+        }
+
+        public static void Error()
+        {
+            logger.Error(defaultError);
         }
 
         public static void Warning(string message)
